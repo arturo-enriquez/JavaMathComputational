@@ -13,7 +13,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import system.Numericals;
+import math.Numericals;
 
 public class ArbolBinario extends javax.swing.JInternalFrame {
     
