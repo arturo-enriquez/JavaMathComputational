@@ -8,12 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-public class frame extends javax.swing.JInternalFrame {
+public class frameMac extends javax.swing.JInternalFrame {
     
     int desktopX, desktopY;
     JInternalFrame iFrame;
     
-    public frame(int x, int y, JInternalFrame iFrame) {
+    public frameMac(int x, int y, JInternalFrame iFrame) {
         initComponents();
         desktopX = x;
         desktopY = y;
@@ -49,19 +49,20 @@ public class frame extends javax.swing.JInternalFrame {
         btnClose = new javax.swing.JButton();
         btnMaximize = new javax.swing.JButton();
         btnMinimize = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         contentFrame = new javax.swing.JDesktopPane();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(225, 228, 232)));
+        setBorder(null);
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Prueba ");
 
-        pnlBarTitle.setBackground(new java.awt.Color(255, 255, 255));
-        pnlBarTitle.setMaximumSize(new java.awt.Dimension(32767, 32));
-        pnlBarTitle.setMinimumSize(new java.awt.Dimension(10, 100));
+        pnlBarTitle.setBackground(new java.awt.Color(41, 44, 52));
+        pnlBarTitle.setMaximumSize(new java.awt.Dimension(32767, 20));
+        pnlBarTitle.setMinimumSize(new java.awt.Dimension(10, 20));
         pnlBarTitle.setPreferredSize(new java.awt.Dimension(0, 32));
         pnlBarTitle.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -74,68 +75,89 @@ public class frame extends javax.swing.JInternalFrame {
             }
         });
 
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Title");
 
-        btnClose.setBackground(new java.awt.Color(255, 255, 255));
-        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/close.png"))); // NOI18N
+        btnClose.setBackground(new java.awt.Color(41, 44, 52));
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/close-macos.png"))); // NOI18N
         btnClose.setBorderPainted(false);
+        btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClose.setFocusPainted(false);
+        btnClose.setFocusable(false);
+        btnClose.setRequestFocusEnabled(false);
+        btnClose.setRolloverEnabled(false);
+        btnClose.setVerifyInputWhenFocusTarget(false);
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
             }
         });
 
-        btnMaximize.setBackground(new java.awt.Color(255, 255, 255));
-        btnMaximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/maximize-circle.png"))); // NOI18N
+        btnMaximize.setBackground(new java.awt.Color(41, 44, 52));
+        btnMaximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/maximize-macos.png"))); // NOI18N
         btnMaximize.setBorderPainted(false);
+        btnMaximize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMaximize.setFocusPainted(false);
+        btnMaximize.setFocusable(false);
+        btnMaximize.setRequestFocusEnabled(false);
+        btnMaximize.setRolloverEnabled(false);
+        btnMaximize.setVerifyInputWhenFocusTarget(false);
         btnMaximize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMaximizeActionPerformed(evt);
             }
         });
 
-        btnMinimize.setBackground(new java.awt.Color(255, 255, 255));
-        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/minimize.png"))); // NOI18N
+        btnMinimize.setBackground(new java.awt.Color(41, 44, 52));
+        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/minimize-macos.png"))); // NOI18N
         btnMinimize.setBorderPainted(false);
+        btnMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMinimize.setFocusPainted(false);
+        btnMinimize.setFocusable(false);
+        btnMinimize.setRequestFocusEnabled(false);
+        btnMinimize.setRolloverEnabled(false);
+        btnMinimize.setVerifyInputWhenFocusTarget(false);
         btnMinimize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMinimizeActionPerformed(evt);
             }
         });
 
+        jLabel1.setText(".");
+
         javax.swing.GroupLayout pnlBarTitleLayout = new javax.swing.GroupLayout(pnlBarTitle);
         pnlBarTitle.setLayout(pnlBarTitleLayout);
         pnlBarTitleLayout.setHorizontalGroup(
             pnlBarTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBarTitleLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
-                .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btnMaximize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnMaximize, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         pnlBarTitleLayout.setVerticalGroup(
             pnlBarTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pnlBarTitleLayout.createSequentialGroup()
-                .addGroup(pnlBarTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnClose)
-                    .addComponent(btnMaximize)
-                    .addComponent(btnMinimize))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1)
+            .addGroup(pnlBarTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnClose, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMaximize, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMinimize, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout contentFrameLayout = new javax.swing.GroupLayout(contentFrame);
         contentFrame.setLayout(contentFrameLayout);
         contentFrameLayout.setHorizontalGroup(
             contentFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 578, Short.MAX_VALUE)
         );
         contentFrameLayout.setVerticalGroup(
             contentFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,13 +168,13 @@ public class frame extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBarTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
             .addComponent(contentFrame)
+            .addComponent(pnlBarTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlBarTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlBarTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(contentFrame))
         );
@@ -164,7 +186,7 @@ public class frame extends javax.swing.JInternalFrame {
         try {
             this.setIcon(true);
         } catch (PropertyVetoException ex) {
-            Logger.getLogger(frame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(frameMac.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnMinimizeActionPerformed
 
@@ -177,7 +199,7 @@ public class frame extends javax.swing.JInternalFrame {
         try {
             this.setMaximum(!this.isMaximum);
         } catch (PropertyVetoException ex) {
-            Logger.getLogger(frame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(frameMac.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnMaximizeActionPerformed
 
@@ -200,6 +222,7 @@ public class frame extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnMaximize;
     private javax.swing.JButton btnMinimize;
     private javax.swing.JDesktopPane contentFrame;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlBarTitle;
     // End of variables declaration//GEN-END:variables

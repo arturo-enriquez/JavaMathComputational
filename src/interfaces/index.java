@@ -4,12 +4,16 @@ import internalFrames.framePrueba;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import java.awt.Image;
 import java.awt.Graphics;
+import java.beans.PropertyVetoException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JInternalFrame;
 
 public class index extends javax.swing.JFrame {
     
-    ArrayList<frame> iFrames = new ArrayList<frame>();
+    ArrayList<frameMac> iFrames = new ArrayList<frameMac>();
     
     public index() {
         initComponents();
@@ -28,47 +32,64 @@ public class index extends javax.swing.JFrame {
                 g.drawImage(image, 0,0,getWidth(),getHeight(),this);
             }
         };
+        lblTrash = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         jmHome = new javax.swing.JMenu();
         jmArboles = new javax.swing.JMenu();
-        jmArbolesBinarios = new javax.swing.JMenuItem();
+        jmFramePrueba = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matematicas Computacionales");
 
         jDesktop.setBackground(new java.awt.Color(245, 245, 246));
 
+        lblTrash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trash-emty.png"))); // NOI18N
+        lblTrash.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblTrash.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTrashMouseClicked(evt);
+            }
+        });
+
+        jDesktop.setLayer(lblTrash, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopLayout = new javax.swing.GroupLayout(jDesktop);
         jDesktop.setLayout(jDesktopLayout);
         jDesktopLayout.setHorizontalGroup(
             jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 840, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopLayout.createSequentialGroup()
+                .addContainerGap(772, Short.MAX_VALUE)
+                .addComponent(lblTrash)
+                .addGap(20, 20, 20))
         );
         jDesktopLayout.setVerticalGroup(
             jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopLayout.createSequentialGroup()
+                .addContainerGap(442, Short.MAX_VALUE)
+                .addComponent(lblTrash)
+                .addGap(20, 20, 20))
         );
 
-        jMenuBar.setBackground(new java.awt.Color(40, 41, 45));
-        jMenuBar.setBorder(null);
+        jMenuBar.setBackground(new java.awt.Color(41, 44, 52));
+        jMenuBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jmHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu-white.png"))); // NOI18N
+        jmHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/apple.png"))); // NOI18N
         jMenuBar.add(jmHome);
 
         jmArboles.setBackground(new java.awt.Color(0, 0, 0));
         jmArboles.setForeground(new java.awt.Color(255, 255, 255));
         jmArboles.setText("Menu");
 
-        jmArbolesBinarios.setBackground(new java.awt.Color(255, 255, 255));
-        jmArbolesBinarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jmArbolesBinarios.setText("ventana");
-        jmArbolesBinarios.setContentAreaFilled(false);
-        jmArbolesBinarios.addActionListener(new java.awt.event.ActionListener() {
+        jmFramePrueba.setBackground(new java.awt.Color(255, 255, 255));
+        jmFramePrueba.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jmFramePrueba.setText("ventana");
+        jmFramePrueba.setContentAreaFilled(false);
+        jmFramePrueba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmArbolesBinariosActionPerformed(evt);
+                jmFramePruebaActionPerformed(evt);
             }
         });
-        jmArboles.add(jmArbolesBinarios);
+        jmArboles.add(jmFramePrueba);
 
         jMenuBar.add(jmArboles);
 
@@ -89,15 +110,39 @@ public class index extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmArbolesBinariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmArbolesBinariosActionPerformed
-        showFrame(new frame(this.getX(), this.getY(), new framePrueba()));
-    }//GEN-LAST:event_jmArbolesBinariosActionPerformed
+    private void jmFramePruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFramePruebaActionPerformed
+        showFrame(new frameMac(this.getX(), this.getY(), new framePrueba()));
+    }//GEN-LAST:event_jmFramePruebaActionPerformed
 
-    public void showFrame(frame iFrame){
+    private void lblTrashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrashMouseClicked
+        for (int i = 0; i < iFrames.size(); i++) {
+            this.jDesktop.remove(iFrames.get(i));
+        }
+        this.jDesktop.repaint();
+        iFrames.clear();
+        lblTrash.setIcon(new ImageIcon(this.getClass().getResource("/img/trash-emty.png")));
+    }//GEN-LAST:event_lblTrashMouseClicked
+
+    public boolean showFrame(frameMac iFrame){
+        for (int i = 0; i < iFrames.size(); i++) {
+            if (iFrames.get(i).getTitle() == iFrame.getTitle()) {
+                iFrames.get(i).toFront();
+                iFrames.get(i).requestFocus();
+                try {
+                    iFrames.get(i).setIcon(false);
+                } catch (PropertyVetoException ex) {
+                    Logger.getLogger(frameWin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return false;
+            }
+        }
         BasicInternalFrameUI bi = (BasicInternalFrameUI)iFrame.getUI();
         bi.setNorthPane(null);
+        iFrames.add(iFrame);
+        lblTrash.setIcon(new ImageIcon(this.getClass().getResource("/img/trash-full.png")));
         jDesktop.add(iFrame);
-        iFrame.show(); 
+        iFrame.show();
+        return true;
     }
     
     public static void main(String args[]) {
@@ -136,7 +181,8 @@ public class index extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktop;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jmArboles;
-    private javax.swing.JMenuItem jmArbolesBinarios;
+    private javax.swing.JMenuItem jmFramePrueba;
     private javax.swing.JMenu jmHome;
+    private javax.swing.JLabel lblTrash;
     // End of variables declaration//GEN-END:variables
 }

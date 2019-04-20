@@ -4,9 +4,9 @@ import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class framePrueba extends javax.swing.JInternalFrame {
+public class ArbolBinario extends javax.swing.JInternalFrame {
 
-    public framePrueba() {
+    public ArbolBinario() {
         initComponents();
     }
 

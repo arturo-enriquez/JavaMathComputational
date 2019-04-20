@@ -10,6 +10,7 @@ public class main {
         index index = new index();
         
         index.setVisible(true);
+        index.setExtendedState(6);
         
         
     }
