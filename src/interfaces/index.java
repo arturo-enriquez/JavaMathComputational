@@ -133,7 +133,11 @@ public class index extends javax.swing.JFrame {
                 } catch (PropertyVetoException ex) {
                     Logger.getLogger(frameWin.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                return false;
+                if (iFrames.get(i).isVisible() == false) {
+                    iFrames.remove(iFrames.get(i));
+                } else {
+                    return false;
+                }
             }
         }
         BasicInternalFrameUI bi = (BasicInternalFrameUI)iFrame.getUI();

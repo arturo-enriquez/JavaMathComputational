@@ -191,8 +191,7 @@ public class frameMac extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnMinimizeActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        this.dispose();
-        //this.setVisible(false);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnMaximizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizeActionPerformed
