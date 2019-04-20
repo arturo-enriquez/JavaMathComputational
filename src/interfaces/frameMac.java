@@ -53,7 +53,7 @@ public class frameMac extends javax.swing.JInternalFrame {
         contentFrame = new javax.swing.JDesktopPane();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(null);
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(37, 40, 48)));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -157,11 +157,11 @@ public class frameMac extends javax.swing.JInternalFrame {
         contentFrame.setLayout(contentFrameLayout);
         contentFrameLayout.setHorizontalGroup(
             contentFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGap(0, 576, Short.MAX_VALUE)
         );
         contentFrameLayout.setVerticalGroup(
             contentFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 314, Short.MAX_VALUE)
+            .addGap(0, 313, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -169,7 +169,7 @@ public class frameMac extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(contentFrame)
-            .addComponent(pnlBarTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+            .addComponent(pnlBarTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

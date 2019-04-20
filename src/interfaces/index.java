@@ -12,14 +12,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 
 public class index extends javax.swing.JFrame {
-    
+
     ArrayList<frameMac> iFrames = new ArrayList<frameMac>();
-    
+
     public index() {
         initComponents();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -111,7 +110,7 @@ public class index extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmFramePruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFramePruebaActionPerformed
-        showFrame(new frameMac(this.getX(), this.getY(), new framePrueba()));
+        showFrame(new frameMac(this.getX(), this.getY(), new internalFrames.ArbolBinario()));
     }//GEN-LAST:event_jmFramePruebaActionPerformed
 
     private void lblTrashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrashMouseClicked
@@ -123,7 +122,7 @@ public class index extends javax.swing.JFrame {
         lblTrash.setIcon(new ImageIcon(this.getClass().getResource("/img/trash-emty.png")));
     }//GEN-LAST:event_lblTrashMouseClicked
 
-    public boolean showFrame(frameMac iFrame){
+    public boolean showFrame(frameMac iFrame) {
         for (int i = 0; i < iFrames.size(); i++) {
             if (iFrames.get(i).getTitle() == iFrame.getTitle()) {
                 iFrames.get(i).toFront();
@@ -140,7 +139,7 @@ public class index extends javax.swing.JFrame {
                 }
             }
         }
-        BasicInternalFrameUI bi = (BasicInternalFrameUI)iFrame.getUI();
+        BasicInternalFrameUI bi = (BasicInternalFrameUI) iFrame.getUI();
         bi.setNorthPane(null);
         iFrames.add(iFrame);
         lblTrash.setIcon(new ImageIcon(this.getClass().getResource("/img/trash-full.png")));
@@ -148,7 +147,7 @@ public class index extends javax.swing.JFrame {
         iFrame.show();
         return true;
     }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
