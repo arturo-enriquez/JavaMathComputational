@@ -11,11 +11,11 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 
-public class index extends javax.swing.JFrame {
+public class Index extends javax.swing.JFrame {
 
-    ArrayList<frameMac> iFrames = new ArrayList<frameMac>();
+    ArrayList<FrameMac> iFrames = new ArrayList<FrameMac>();
 
-    public index() {
+    public Index() {
         initComponents();
     }
 
@@ -110,7 +110,7 @@ public class index extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmFramePruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFramePruebaActionPerformed
-        showFrame(new frameMac(this.getX(), this.getY(), new internalFrames.ArbolBinario()));
+        showFrame(new FrameMac(this.getX(), this.getY(), new internalFrames.ArbolBinario()));
     }//GEN-LAST:event_jmFramePruebaActionPerformed
 
     private void lblTrashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrashMouseClicked
@@ -122,7 +122,7 @@ public class index extends javax.swing.JFrame {
         lblTrash.setIcon(new ImageIcon(this.getClass().getResource("/img/trash-emty.png")));
     }//GEN-LAST:event_lblTrashMouseClicked
 
-    public boolean showFrame(frameMac iFrame) {
+    public boolean showFrame(FrameMac iFrame) {
         for (int i = 0; i < iFrames.size(); i++) {
             if (iFrames.get(i).getTitle() == iFrame.getTitle()) {
                 iFrames.get(i).toFront();
@@ -130,7 +130,7 @@ public class index extends javax.swing.JFrame {
                 try {
                     iFrames.get(i).setIcon(false);
                 } catch (PropertyVetoException ex) {
-                    Logger.getLogger(frameWin.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FrameWin.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 if (iFrames.get(i).isVisible() == false) {
                     iFrames.remove(iFrames.get(i));
@@ -162,20 +162,21 @@ public class index extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new index().setVisible(true);
+                new Index().setVisible(true);
             }
         });
     }

@@ -1,13 +1,13 @@
 package main;
 
-import interfaces.index;
+import interfaces.Index;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
         
         
-        index index = new index();
+        Index index = new Index();
         
         index.setVisible(true);
         index.setExtendedState(6);

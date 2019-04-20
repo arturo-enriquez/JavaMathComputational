@@ -8,12 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-public class frameWin extends javax.swing.JInternalFrame {
+public class FrameWin extends javax.swing.JInternalFrame {
     
     int desktopX, desktopY;
     JInternalFrame iFrame;
     
-    public frameWin(int x, int y, JInternalFrame iFrame) {
+    public FrameWin(int x, int y, JInternalFrame iFrame) {
         initComponents();
         desktopX = x;
         desktopY = y;
@@ -164,7 +164,7 @@ public class frameWin extends javax.swing.JInternalFrame {
         try {
             this.setIcon(true);
         } catch (PropertyVetoException ex) {
-            Logger.getLogger(frameWin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrameWin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnMinimizeActionPerformed
 
@@ -176,7 +176,7 @@ public class frameWin extends javax.swing.JInternalFrame {
         try {
             this.setMaximum(!this.isMaximum);
         } catch (PropertyVetoException ex) {
-            Logger.getLogger(frameWin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrameWin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnMaximizeActionPerformed
 
