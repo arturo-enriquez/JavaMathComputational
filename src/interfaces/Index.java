@@ -35,7 +35,11 @@ public class Index extends javax.swing.JFrame {
         jMenuBar = new javax.swing.JMenuBar();
         jmHome = new javax.swing.JMenu();
         jmArboles = new javax.swing.JMenu();
-        jmFramePrueba = new javax.swing.JMenuItem();
+        jmArbolBInario = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jmNumericos = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matematicas Computacionales");
@@ -64,7 +68,7 @@ public class Index extends javax.swing.JFrame {
         jDesktopLayout.setVerticalGroup(
             jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopLayout.createSequentialGroup()
-                .addContainerGap(442, Short.MAX_VALUE)
+                .addContainerGap(444, Short.MAX_VALUE)
                 .addComponent(lblTrash)
                 .addGap(20, 20, 20))
         );
@@ -72,25 +76,46 @@ public class Index extends javax.swing.JFrame {
         jMenuBar.setBackground(new java.awt.Color(41, 44, 52));
         jMenuBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jmHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/apple.png"))); // NOI18N
+        jmHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu-white.png"))); // NOI18N
         jMenuBar.add(jmHome);
 
         jmArboles.setBackground(new java.awt.Color(0, 0, 0));
         jmArboles.setForeground(new java.awt.Color(255, 255, 255));
-        jmArboles.setText("Menu");
+        jmArboles.setText("Gráficos");
 
-        jmFramePrueba.setBackground(new java.awt.Color(255, 255, 255));
-        jmFramePrueba.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jmFramePrueba.setText("ventana");
-        jmFramePrueba.setContentAreaFilled(false);
-        jmFramePrueba.addActionListener(new java.awt.event.ActionListener() {
+        jmArbolBInario.setBackground(new java.awt.Color(255, 255, 255));
+        jmArbolBInario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jmArbolBInario.setText("Arbol Binario");
+        jmArbolBInario.setContentAreaFilled(false);
+        jmArbolBInario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmFramePruebaActionPerformed(evt);
+                jmArbolBInarioActionPerformed(evt);
             }
         });
-        jmArboles.add(jmFramePrueba);
+        jmArboles.add(jmArbolBInario);
 
         jMenuBar.add(jmArboles);
+
+        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu1.setText("Conversiones");
+
+        jmNumericos.setText("Sistemas Numéricos");
+        jmNumericos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmNumericosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmNumericos);
+
+        jMenuBar.add(jMenu1);
+
+        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu3.setText("Operaciones");
+
+        jMenuItem3.setText("Suma de Binarios");
+        jMenu3.add(jMenuItem3);
+
+        jMenuBar.add(jMenu3);
 
         setJMenuBar(jMenuBar);
 
@@ -109,9 +134,9 @@ public class Index extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmFramePruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmFramePruebaActionPerformed
+    private void jmArbolBInarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmArbolBInarioActionPerformed
         showFrame(new FrameMac(this.getX(), this.getY(), new internalFrames.ArbolBinario()));
-    }//GEN-LAST:event_jmFramePruebaActionPerformed
+    }//GEN-LAST:event_jmArbolBInarioActionPerformed
 
     private void lblTrashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrashMouseClicked
         for (int i = 0; i < iFrames.size(); i++) {
@@ -121,6 +146,10 @@ public class Index extends javax.swing.JFrame {
         iFrames.clear();
         lblTrash.setIcon(new ImageIcon(this.getClass().getResource("/img/trash-emty.png")));
     }//GEN-LAST:event_lblTrashMouseClicked
+
+    private void jmNumericosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmNumericosActionPerformed
+        showFrame(new FrameMac(this.getX(), this.getY(), new internalFrames.Numericos()));
+    }//GEN-LAST:event_jmNumericosActionPerformed
 
     public boolean showFrame(FrameMac iFrame) {
         for (int i = 0; i < iFrames.size(); i++) {
@@ -183,10 +212,14 @@ public class Index extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktop;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jmArbolBInario;
     private javax.swing.JMenu jmArboles;
-    private javax.swing.JMenuItem jmFramePrueba;
     private javax.swing.JMenu jmHome;
+    private javax.swing.JMenuItem jmNumericos;
     private javax.swing.JLabel lblTrash;
     // End of variables declaration//GEN-END:variables
 }
