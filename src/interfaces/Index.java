@@ -39,7 +39,7 @@ public class Index extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jmNumericos = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmSumaRestaBinarios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matematicas Computacionales");
@@ -112,8 +112,13 @@ public class Index extends javax.swing.JFrame {
         jMenu3.setForeground(new java.awt.Color(255, 255, 255));
         jMenu3.setText("Operaciones");
 
-        jMenuItem3.setText("Suma de Binarios");
-        jMenu3.add(jMenuItem3);
+        jmSumaRestaBinarios.setText("Suma de Binarios");
+        jmSumaRestaBinarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmSumaRestaBinariosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jmSumaRestaBinarios);
 
         jMenuBar.add(jMenu3);
 
@@ -150,6 +155,10 @@ public class Index extends javax.swing.JFrame {
     private void jmNumericosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmNumericosActionPerformed
         showFrame(new FrameMac(this.getX(), this.getY(), new internalFrames.Numericos()));
     }//GEN-LAST:event_jmNumericosActionPerformed
+
+    private void jmSumaRestaBinariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSumaRestaBinariosActionPerformed
+        showFrame(new FrameMac(this.getX(), this.getY(), new internalFrames.SumaRestaBinario()));
+    }//GEN-LAST:event_jmSumaRestaBinariosActionPerformed
 
     public boolean showFrame(FrameMac iFrame) {
         for (int i = 0; i < iFrames.size(); i++) {
@@ -215,11 +224,11 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jmArbolBInario;
     private javax.swing.JMenu jmArboles;
     private javax.swing.JMenu jmHome;
     private javax.swing.JMenuItem jmNumericos;
+    private javax.swing.JMenuItem jmSumaRestaBinarios;
     private javax.swing.JLabel lblTrash;
     // End of variables declaration//GEN-END:variables
 }

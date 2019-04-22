@@ -75,10 +75,13 @@
             <Property name="text" type="java.lang.String" value="Operaciones"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="jmSumaRestaBinarios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Suma de Binarios"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmSumaRestaBinariosActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
