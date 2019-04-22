@@ -34,6 +34,9 @@ public class Index extends javax.swing.JFrame {
         lblTrash = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         jmHome = new javax.swing.JMenu();
+        jmInfo = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jmSalir = new javax.swing.JMenuItem();
         jmArboles = new javax.swing.JMenu();
         jmArbolBInario = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -77,6 +80,24 @@ public class Index extends javax.swing.JFrame {
         jMenuBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jmHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu-white.png"))); // NOI18N
+
+        jmInfo.setText("Información");
+        jmInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmInfoActionPerformed(evt);
+            }
+        });
+        jmHome.add(jmInfo);
+        jmHome.add(jSeparator1);
+
+        jmSalir.setText("Salir");
+        jmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmSalirActionPerformed(evt);
+            }
+        });
+        jmHome.add(jmSalir);
+
         jMenuBar.add(jmHome);
 
         jmArboles.setBackground(new java.awt.Color(0, 0, 0));
@@ -160,6 +181,14 @@ public class Index extends javax.swing.JFrame {
         showFrame(new FrameMac(this.getX(), this.getY(), new internalFrames.SumaRestaBinario()));
     }//GEN-LAST:event_jmSumaRestaBinariosActionPerformed
 
+    private void jmInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmInfoActionPerformed
+        showFrame(new FrameMac(this.getX(), this.getY(), new internalFrames.Presentacion()));
+    }//GEN-LAST:event_jmInfoActionPerformed
+
+    private void jmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jmSalirActionPerformed
+
     public boolean showFrame(FrameMac iFrame) {
         for (int i = 0; i < iFrames.size(); i++) {
             if (iFrames.get(i).getTitle() == iFrame.getTitle()) {
@@ -224,10 +253,13 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuItem jmArbolBInario;
     private javax.swing.JMenu jmArboles;
     private javax.swing.JMenu jmHome;
+    private javax.swing.JMenuItem jmInfo;
     private javax.swing.JMenuItem jmNumericos;
+    private javax.swing.JMenuItem jmSalir;
     private javax.swing.JMenuItem jmSumaRestaBinarios;
     private javax.swing.JLabel lblTrash;
     // End of variables declaration//GEN-END:variables
