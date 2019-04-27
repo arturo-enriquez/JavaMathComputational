@@ -1,6 +1,6 @@
 # Aplicación de de Métodos Computacionales en Java
 
 
-Aplacacion hecha con ventanas JInternalIFrame perzonalizadas y reutilizables.
+Aplicacion hecha con ventanas JInternalIFrame personalizadas y reutilizables.
 
 
