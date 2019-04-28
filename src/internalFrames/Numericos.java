@@ -35,7 +35,7 @@ public class Numericos extends javax.swing.JInternalFrame {
         setTitle("Conversiones Numericas");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Conversiones Numericas");
+        jLabel1.setText("Conversiones Numéricas");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(143, 145, 154));
